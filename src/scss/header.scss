@@ -1,0 +1,12 @@
+.page-header {
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(16, 17, 22);
+
+  .title {
+    font-size: 1.2rem;
+    color: white;
+  }
+}
