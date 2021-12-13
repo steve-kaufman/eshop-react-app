@@ -1,7 +1,10 @@
 name: Deploy
 
 on:
-  push: [main dockerize]
+  push:
+    branches:
+    - main
+    - dockerize
 
   workflow_dispatch:
 
