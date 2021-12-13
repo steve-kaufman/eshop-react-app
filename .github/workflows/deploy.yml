@@ -1,0 +1,34 @@
+name: Deploy
+
+on:
+  push: [main dockerize]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Login
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+          DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
+        run: echo $DOCKER_PASS | docker login --username $DOCKER_USER --password-stdin
+
+      - name: Build
+        run: docker build -t stevekaufman/eshop-react-app .
+
+      - name: Push
+        run: docker push stevekaufman/eshop-react-app
+
+  deploy:
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Web Hook
+        run: "curl -H 'ci-access-key: ${{ secrets.CI_ACCESS_KEY }}' https://steve-kaufman.com/deploy/?image=stevekaufman/eshop-react-app"
