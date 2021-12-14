@@ -11,7 +11,9 @@ COPY tsconfig.json .
 COPY src src
 COPY public public
 
-RUN yarn build
+ARG PUBLIC_URL
+
+RUN PUBLIC_URL=${PUBLIC_URL} yarn build
 
 
 FROM stevekaufman/react-server
