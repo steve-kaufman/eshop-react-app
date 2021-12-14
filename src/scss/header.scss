@@ -1,9 +1,13 @@
+@import "./colors.scss";
+
 .page-header {
   height: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(16, 17, 22);
+  background-color: $secondary-color;
+
+  border-bottom: 4px solid $primary-color;
 
   .title {
     font-size: 1.2rem;

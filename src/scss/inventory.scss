@@ -1,0 +1,35 @@
+@import "./colors.scss";
+
+.inventory-item {
+  background-color: #ddd;
+  padding: 0.4rem;
+
+  .item-image {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.4rem;
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .item-name {
+    font-size: 0.9rem;
+    font-weight: normal;
+  }
+  .item-price {
+    font-size: 0.8rem;
+  }
+}
+
+.item-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.3rem;
+  padding: 0.3rem;
+  background-color: #eee;
+}
