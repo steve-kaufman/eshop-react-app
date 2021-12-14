@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap");
 @import "./scss/page-main.scss";
+@import "./scss/colors.scss";
 
 * {
   margin: 0;
@@ -8,4 +9,12 @@
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: $dark;
+}
+
+ul {
+  list-style: none;
 }
