@@ -1,0 +1,28 @@
+@import "./colors.scss";
+
+.product-page {
+  .product-image {
+    display: flex;
+    justify-content: center;
+    background-color: #ddd;
+    img {
+      max-height: 400px;
+    }
+  }
+  .product-name {
+    padding: 0.5rem 1.5rem;
+    color: white;
+    font-weight: normal;
+    font-size: 1.1rem;
+    background-color: darken($primary-color, 10);
+    margin-bottom: 0.5rem;
+  }
+  .product-price {
+    padding: 0.5rem 1rem;
+    color: white;
+    font-weight: normal;
+    font-size: 1.2rem;
+    background-color: lighten($dark, 5);
+    margin: 0 2rem;
+  }
+}
