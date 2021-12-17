@@ -95,7 +95,6 @@ export const products: Product[] = [
 ]
 
 function App() {
-  console.log(process.env.PUBLIC_URL)
   return (
     <div className="App">
       <Header />
