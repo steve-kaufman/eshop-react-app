@@ -1,10 +1,17 @@
-import { Item } from "../types/Item"
+import { Product } from "../types/Product"
 
 import "../scss/inventory.scss"
+import { useNavigate } from "react-router-dom"
 
-export function InventoryItem({ name, price, imgURL }: Item) {
+export function InventoryItem({ id, name, price, imgURL }: Product) {
+  const navigate = useNavigate()
+
+  const selectItem = () => {
+    navigate(`/product/${id}`)
+  }
+
   return (
-    <section className="inventory-item">
+    <section className="inventory-item" onClick={selectItem}>
       <figure className="item-image">
         <img src={imgURL} alt={name} />
       </figure>
