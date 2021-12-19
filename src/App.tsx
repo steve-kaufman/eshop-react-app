@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Footer } from "./components/Footer"
 import { Header } from "./components/Header"
+import { CartPage } from "./pages/Cart"
 import { Home } from "./pages/Home"
 import { ProductPage } from "./pages/Product"
 import { Product } from "./types/Product"
@@ -97,14 +98,15 @@ export const products: Product[] = [
 function App() {
   return (
     <div className="App">
-      <Header />
       <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   )
 }

@@ -4,13 +4,30 @@
   height: 3.5rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: $secondary-color;
+  padding: 0 2rem;
 
   border-bottom: 4px solid $primary-color;
 
   .title {
     font-size: 1.2rem;
     color: white;
+    text-decoration: none;
+  }
+
+  .cart {
+    color: white;
+    font-size: 0.8rem;
+    line-height: 0.8;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+
+    svg {
+      margin-top: 4px;
+      height: 1.5rem;
+      width: 1.5rem;
+    }
   }
 }
