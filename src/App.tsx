@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { RecoilRoot } from "recoil"
 import { Footer } from "./components/Footer"
 import { Header } from "./components/Header"
 import { CartPage } from "./pages/Cart"
@@ -98,15 +99,17 @@ export const products: Product[] = [
 function App() {
   return (
     <div className="App">
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/product/:id" element={<ProductPage />} />
-          <Route path="/cart" element={<CartPage />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <RecoilRoot>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/product/:id" element={<ProductPage />} />
+            <Route path="/cart" element={<CartPage />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </RecoilRoot>
     </div>
   )
 }
