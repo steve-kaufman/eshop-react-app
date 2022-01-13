@@ -23,7 +23,7 @@ export function ProductPage() {
   }, [cart, id])
 
   const addToCart = () => {
-    setCart((cart) => [...cart, { productID: id, quantity: 1 }])
+    setCart((cart) => [...cart, { productID: id, quantity: 1, price }])
   }
 
   const addToQuantity = (amount: number) => {

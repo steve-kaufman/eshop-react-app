@@ -74,3 +74,14 @@
     }
   }
 }
+
+.cart-total {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: darken($color: $primary-color, $amount: 20);
+
+  .total-price {
+    margin-left: 1rem;
+  }
+}

@@ -2,6 +2,7 @@ import { atom } from "recoil";
 
 export type CartItem = {
     productID: string
+    price: number
     quantity: number
 }
 
