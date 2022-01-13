@@ -1,6 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { RecoilRoot } from "recoil"
 import { Footer } from "./components/Footer"
 import { Header } from "./components/Header"
+import { CartPage } from "./pages/Cart"
 import { Home } from "./pages/Home"
 import { ProductPage } from "./pages/Product"
 import { Product } from "./types/Product"
@@ -36,7 +38,7 @@ export const products: Product[] = [
   },
   {
     id: "5",
-    name: "Lamp",
+    name: "Super Amazing Ultra Lamp - 3,000 Lumens Very Good Lamp",
     price: 29.99,
     imgURL: "https://i.imgur.com/DFbPzOo.jpeg",
     tags: ["popular"],
@@ -97,14 +99,17 @@ export const products: Product[] = [
 function App() {
   return (
     <div className="App">
-      <Header />
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/product/:id" element={<ProductPage />} />
-        </Routes>
-      </BrowserRouter>
-      <Footer />
+      <RecoilRoot>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/product/:id" element={<ProductPage />} />
+            <Route path="/cart" element={<CartPage />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </RecoilRoot>
     </div>
   )
 }

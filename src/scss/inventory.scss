@@ -21,7 +21,14 @@
   .item-name {
     font-size: 0.9rem;
     font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
   }
+
   .item-price {
     font-size: 0.8rem;
   }
