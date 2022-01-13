@@ -15,7 +15,9 @@ export function CartItemComponent({ productID, quantity }: CartItem) {
         <p className="product-price">${price}</p>
         <p className="product-quantity">Quantity: {quantity}</p>
       </section>
-      <Icon className="remove-btn" icon="mdi:trash-can-outline" />
+      <section className="remove-btn">
+        <Icon icon="mdi:trash-can-outline" />
+      </section>
     </li>
   )
 }

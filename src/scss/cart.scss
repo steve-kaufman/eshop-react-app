@@ -8,8 +8,10 @@
     margin-bottom: 0.3rem;
 
     .product-img {
-      width: 100px;
-      height: 85px;
+      min-width: 25%;
+      max-width: 25%;
+      min-height: 85px;
+      max-height: 85px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -22,16 +24,21 @@
     }
 
     .product-details {
-      margin-left: 1rem;
+      padding-left: 1rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      flex-grow: 2;
+      width: 55%;
 
       .product-name {
         font-size: 1.1rem;
         border-bottom: 1px solid lighten($dark, 20);
         margin-bottom: 2px;
+        max-height: 1.8rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
       }
 
       .product-price {
@@ -49,10 +56,21 @@
     }
 
     .remove-btn {
-      margin: auto 1rem;
-      height: 1.5rem;
-      width: 1.5rem;
-      color: rgb(153, 25, 25);
+      min-height: 100%;
+      min-width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 1rem;
+
+      svg {
+        height: 1.5rem;
+        min-height: 1.5rem;
+        width: 1.5rem;
+        min-width: 1.5rem;
+        color: rgb(153, 25, 25);
+        margin-top: 5px;
+      }
     }
   }
 }
