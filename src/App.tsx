@@ -38,7 +38,7 @@ export const products: Product[] = [
   },
   {
     id: "5",
-    name: "Lamp",
+    name: "Super Amazing Ultra Lamp - 3,000 Lumens Very Good Lamp",
     price: 29.99,
     imgURL: "https://i.imgur.com/DFbPzOo.jpeg",
     tags: ["popular"],
