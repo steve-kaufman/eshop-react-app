@@ -1,9 +1,18 @@
 import { Icon } from "@iconify/react"
+import { useSetRecoilState } from "recoil"
 import { useProduct } from "../hooks/useProduct"
-import { CartItem } from "../state/cart"
+import { CartItem, cartState } from "../state/cart"
 
 export function CartItemComponent({ productID, quantity }: CartItem) {
   const { name, price, imgURL } = useProduct(productID)
+
+  const setCart = useSetRecoilState(cartState)
+
+  const remove = () => {
+    setCart(cart => 
+      cart.filter(item => 
+        item.productID !== productID))
+  }
 
   return (
     <li className="cart-item">
@@ -15,9 +24,9 @@ export function CartItemComponent({ productID, quantity }: CartItem) {
         <p className="product-price">${price}</p>
         <p className="product-quantity">Quantity: {quantity}</p>
       </section>
-      <section className="remove-btn">
+      <button className="remove-btn" onClick={remove}>
         <Icon icon="mdi:trash-can-outline" />
-      </section>
+      </button>
     </li>
   )
 }
