@@ -3,6 +3,7 @@ import { RecoilRoot } from "recoil"
 import { Footer } from "./components/Footer"
 import { Header } from "./components/Header"
 import { CartPage } from "./pages/Cart"
+import { CheckoutPage } from "./pages/Checkout"
 import { Home } from "./pages/Home"
 import { ProductPage } from "./pages/Product"
 import { Product } from "./types/Product"
@@ -106,6 +107,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<ProductPage />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
           </Routes>
           <Footer />
         </BrowserRouter>

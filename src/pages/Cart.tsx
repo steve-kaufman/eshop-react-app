@@ -8,9 +8,11 @@ import { Link } from "react-router-dom"
 export function CartPage() {
   const cart = useRecoilValue(cartState)
 
-  const total = cart.reduce<number>((value, item) => {
-    return value + item.quantity * item.price
-  }, 0).toFixed(2)
+  const total = cart
+    .reduce<number>((value, item) => {
+      return value + item.quantity * item.price
+    }, 0)
+    .toFixed(2)
 
   return (
     <main className="page-main cart-page">
