@@ -1,0 +1,27 @@
+$md: 600px;
+$lg: 900px;
+$xl: 1200px;
+
+@mixin breakpoint($size) {
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin md {
+  @include breakpoint($md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @include breakpoint($lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @include breakpoint($xl) {
+    @content;
+  }
+}

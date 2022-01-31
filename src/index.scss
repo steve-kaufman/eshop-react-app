@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap");
 @import "./scss/page-main.scss";
 @import "./scss/colors.scss";
+@import "./scss/breakpoints.scss";
 
 * {
   margin: 0;
@@ -24,4 +25,14 @@ button {
   padding: 0.3rem 0.5rem;
   color: white;
   background: none;
+  cursor: pointer;
+}
+
+html {
+  @include md {
+    font-size: 18px;
+  }
+  @include xl {
+    font-size: 16px;
+  }
 }

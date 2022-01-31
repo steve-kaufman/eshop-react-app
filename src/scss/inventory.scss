@@ -1,4 +1,5 @@
 @import "./colors.scss";
+@import "./breakpoints.scss";
 
 .inventory-item {
   background-color: #ddd;
@@ -40,4 +41,13 @@
   gap: 0.3rem;
   padding: 0.3rem;
   background-color: #eee;
+
+  @include lg {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  @include xl {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
