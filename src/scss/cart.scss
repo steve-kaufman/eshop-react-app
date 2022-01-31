@@ -3,6 +3,11 @@
 
 .cart-items {
   padding: 0 0.5rem;
+
+  @include lg {
+    padding: 0;
+  }
+
   .cart-item {
     display: flex;
     background-color: white;
@@ -80,8 +85,16 @@
   }
 }
 
-.cart-total {
+.cart-footer {
   margin: 0.5rem;
+  width: 100%;
+
+  @include lg {
+    margin: 0.5rem 0;
+  }
+}
+
+.cart-total {
   padding: 0.5rem 1rem;
   color: white;
   background-color: darken($color: $primary-color, $amount: 20);
@@ -89,4 +102,16 @@
   .total-price {
     margin-left: 1rem;
   }
+}
+
+.checkout-btn {
+  width: 40%;
+  background: $primary-color;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border: none;
+  margin-top: 1rem;
+  font-size: 1rem;
 }

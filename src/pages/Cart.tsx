@@ -3,6 +3,7 @@ import { CartItemComponent } from "../components/CartItemComponent"
 import { cartState } from "../state/cart"
 
 import "../scss/cart.scss"
+import { Link } from "react-router-dom"
 
 export function CartPage() {
   const cart = useRecoilValue(cartState)
@@ -21,10 +22,15 @@ export function CartPage() {
           <CartItemComponent key={i} {...item} />
         ))}
       </ul>
-      <section className="cart-total">
-        <h3>Total:</h3>
-        <h2 className="total-price">${total}</h2>
-      </section>
+      <footer className="cart-footer">
+        <section className="cart-total">
+          <h3>Total:</h3>
+          <h2 className="total-price">${total}</h2>
+        </section>
+        <Link to="/checkout">
+          <button className="checkout-btn">Checkout</button>
+        </Link>
+      </footer>
     </main>
   )
 }
