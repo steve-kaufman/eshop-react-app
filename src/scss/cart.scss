@@ -1,4 +1,5 @@
 @import "./colors.scss";
+@import "./breakpoints.scss";
 
 .cart-items {
   padding: 0 0.5rem;
@@ -6,12 +7,12 @@
     display: flex;
     background-color: white;
     margin-bottom: 0.3rem;
+    height: 6rem;
 
     .product-img {
       min-width: 25%;
       max-width: 25%;
-      min-height: 85px;
-      max-height: 85px;
+      max-height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -24,11 +25,15 @@
     }
 
     .product-details {
-      padding-left: 1rem;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-around;
       width: 55%;
+
+      @include lg {
+        padding-left: 2rem;
+      }
 
       .product-name {
         font-size: 1.1rem;

@@ -9,7 +9,7 @@ export function CartPage() {
 
   const total = cart.reduce<number>((value, item) => {
     return value + item.quantity * item.price
-  }, 0)
+  }, 0).toFixed(2)
 
   return (
     <main className="page-main cart-page">
